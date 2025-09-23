@@ -1,0 +1,29 @@
+1. Get the planned route polyline
+
+When you call GraphHopper, you get a list of [lat, lon] points that define the route.
+Example:
+
+const route = [
+  [28.7041, 77.1025], // Delhi
+  [28.61, 77.23],
+  [28.55, 77.3]       // Somewhere else
+];
+
+2. Get the current GPS point from the bus
+
+Say bus sends:
+
+const currentPos = [28.699, 77.11]; in the geo-redis
+
+3. Check distance from point → polyline
+
+You need the shortest distance from current GPS point to the nearest segment of the route polyline.
+
+
+if the deviation is greater than 80m then again a call to GraphHopper api otherwise continue  
+
+
+timestamp with the geolocation so that i can run the fucking divergence check;
+
+  would be eazy with redis inorder to fucking apply filters.
+  geoADD with the driver id would replace the prev one 
