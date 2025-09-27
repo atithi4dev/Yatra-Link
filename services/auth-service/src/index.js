@@ -1,20 +1,27 @@
 // auth-service/index.js
-import express from 'express';
-import dotenv from 'dotenv';
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+// --- DB Connection ---
+mongoose
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected for Auth Service"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-  // Simple mock auth
-  if (username === 'user1' && password === 'pass1') {
-    return res.json({ status: 'ok', message: 'Auth successful' });
-  }
-  return res.status(401).json({ status: 'error', message: 'Invalid credentials' });
-});
 
-const PORT = 5001;
-app.listen(PORT, () => console.log(`Auth service running on ${PORT}`));
+// Import Router
+import passengerRouter from "./routes/passenger.routes"
+
+
+// Use router
+app.post("/passenger", passengerRouter);
+
+// --- Start Server ---
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => console.log(`Auth service running on port ${PORT}`));

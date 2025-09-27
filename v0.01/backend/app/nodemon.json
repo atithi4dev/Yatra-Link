@@ -1,0 +1,5 @@
+{
+  "watch": ["index.js", "routes/", "controllers/"], 
+  "ignore": ["mqtt.js", "btf.js", "ftb.js", "payloadHandler.js", "driverPayloads.json"],
+  "ext": "js,json"
+}

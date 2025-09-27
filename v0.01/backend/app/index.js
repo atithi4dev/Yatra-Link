@@ -6,12 +6,16 @@ import driverRoutes from "./routes/driverRoutes.js";
 import busRoutes from "./routes/busRoutes.js";
 import stationRoutes from "./routes/stationRoutes.js";
 import Redis from "ioredis";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-
+app.use(cors({
+  origin:"*",
+  credentials: true
+}))
 // DB connection
 mongoose
   .connect(process.env.MONGO_URI)

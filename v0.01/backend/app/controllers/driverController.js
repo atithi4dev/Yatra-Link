@@ -97,6 +97,7 @@ export const loginDriver = async (req, res) => {
 };
 
 export const handleDriver = async (req, res) => {
+  console.log("STARTING DRIVER");
   const { driverId, status } = req.body;
   if (!status === "READY") {
     return res.status(201).json({ message: "Driver status not ready" });

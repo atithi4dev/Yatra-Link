@@ -1,8 +1,7 @@
 import crypto from "crypto";
 import redis from "../config/redis.js";
 import transporter from "../config/nodemailer.js";
-
-export const sendOtpController = async (req, res) => {
+export const sendOtp = async (req, res) => {
   try {
     const { email } = req.body;
     if (!email) return res.status(400).json({ message: "Email is required" });
@@ -35,7 +34,7 @@ export const sendOtpController = async (req, res) => {
   }
 };
 
-export const verifyOtpController = async (req, res) => {
+export const verifyOTP = async (req, res) => {
   try {
     const { email, otp } = req.body;
     if (!email || !otp) {

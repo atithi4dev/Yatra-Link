@@ -1,0 +1,42 @@
+[
+  {
+    "driverId": "driver-1",
+    "busId": "bus-101",
+    "lat": 26.85106836701661,
+    "lng": 80.95892047264002,
+    "timestamp": "2025-09-27T10:26:36.194Z",
+    "source": "app"
+  },
+  {
+    "driverId": "HELLOI AM DRIVER",
+    "busId": "HELLOI AM DRIVER",
+    "lat": 26.85048533456786,
+    "lng": 80.95465348689135,
+    "timestamp": "2025-09-27T11:03:04.417Z",
+    "source": "app"
+  },
+  {
+    "driverId": "IDK",
+    "busId": "IDK",
+    "lat": 26.85162331506042,
+    "lng": 80.95996583191368,
+    "timestamp": "2025-09-27T11:09:34.947Z",
+    "source": "app"
+  },
+  {
+    "driverId": "RAMPAL",
+    "busId": "RAMPAL",
+    "lat": 26.854762304012986,
+    "lng": 80.95309520010787,
+    "timestamp": "2025-09-27T11:18:25.531Z",
+    "source": "app"
+  },
+  {
+    "driverId": "SUKHDEV",
+    "busId": "SUKHDEV",
+    "lat": 26.85809392266786,
+    "lng": 80.95991357942043,
+    "timestamp": "2025-09-27T11:18:27.743Z",
+    "source": "app"
+  }
+]
